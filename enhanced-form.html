@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Enhanced HTML5 Content & Mastering Forms</title>
+  <style>
+    /* Basic styling for readability and layout */
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      margin: 20px;
+      max-width: 800px;
+      background: #f9f9f9;
+    }
+    header, section, footer {
+      background: white;
+      padding: 15px 20px;
+      margin-bottom: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 8px #ccc;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 1em;
+    }
+    th, td {
+      border: 1px solid #aaa;
+      padding: 8px;
+      text-align: left;
+    }
+    th {
+      background-color: #eee;
+    }
+    form label {
+      display: block;
+      margin-top: 10px;
+      font-weight: bold;
+    }
+    input, select, textarea {
+      width: 100%;
+      padding: 8px;
+      margin-top: 4px;
+      box-sizing: border-box;
+    }
+    fieldset {
+      margin-bottom: 15px;
+      border: 2px solid #ccc;
+      border-radius: 6px;
+      padding: 10px 15px;
+    }
+    legend {
+      font-weight: bold;
+      padding: 0 5px;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 1em;
+      background-color: #007acc;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+    button:hover {
+      background-color: #005fa3;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Enhancing HTML5 Content & Mastering Forms</h1>
+  <p>Practice organizing content with lists, tables, and media, followed by building a comprehensive, accessible HTML5 form with validation.</p>
+</header>
+
+<section>
+  <h2>Organizing Content with Lists</h2>
+  <!-- Ordered list example for steps -->
+  <h3>Steps to Create a Website</h3>
+  <ol>
+    <li>Plan the website structure</li>
+    <li>Design the layout and visuals</li>
+    <li>Write HTML and CSS code</li>
+    <li>Add interactivity with JavaScript</li>
+    <li>Test and deploy</li>
+  </ol>
+
+  <!-- Unordered list example for features -->
+  <h3>Key Website Features</h3>
+  <ul>
+    <li>Responsive design</li>
+    <li>Fast loading speed</li>
+    <li>Accessible navigation</li>
+    <li>SEO optimized content</li>
+  </ul>
+</section>
+
+<section>
+  <h2>Presenting Data with Tables</h2>
+  <!-- Table example showing product data -->
+  <table>
+    <caption>Monthly Product Sales</caption>
+    <thead>
+      <tr>
+        <th>Product</th>
+        <th>Units Sold</th>
+        <th>Revenue (USD)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Smartphone</td>
+        <td>150</td>
+        <td>75,000</td>
+      </tr>
+      <tr>
+        <td>Laptop</td>
+        <td>80</td>
+        <td>96,000</td>
+      </tr>
+      <tr>
+        <td>Tablet</td>
+        <td>120</td>
+        <td>54,000</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+<section>
+  <h2>Embedding Media</h2>
+  <!-- Image example with alt for accessibility -->
+  <figure>
+    <img src="welcome.jpg" alt="Sample welcome page image" width="400" height="200" />
+    <figcaption>A beautiful welcome page image</figcaption>
+  </figure>
+
+  <!-- Audio element with controls -->
+  <h3>Audio Sample</h3>
+  <audio controls>
+    <source src="https://www.w3schools.com/html/horse.ogg" type="audio/ogg" />
+    <source src="https://www.w3schools.com/html/horse.mp3" type="audio/mpeg" />
+    Your browser does not support the audio element.
+  </audio>
+
+  <!-- Video element with controls and fallback text -->
+  <h3>Video Sample</h3>
+  <video width="400" controls>
+    <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4" />
+    <source src="https://www.w3schools.com/html/mov_bbb.ogg" type="video/ogg" />
+    Your browser does not support the video tag.
+  </video>
+</section>
+
+<section>
+  <h2>User Registration Form</h2>
+  <!-- Complete accessible form with validation -->
+  <form action="#" method="post" novalidate>
+    <!-- Grouping personal details -->
+    <fieldset>
+      <legend>Personal Information</legend>
+
+      <!-- Label associates with input via for and id -->
+      <label for="fullname">Full Name *</label>
+      <input
+        type="text"
+        id="fullname"
+        name="fullname"
+        placeholder="Enter your full name"
+        required
+        minlength="3"
+        autocomplete="name"
+        title="Please enter at least 3 characters"
+      />
+
+      <label for="email">Email Address *</label>
+      <input
+        type="email"
+        id="email"
+        name="email"
+        placeholder="example@mail.com"
+        required
+        autocomplete="email"
+        title="Please enter a valid email address"
+      />
+
+      <label for="phone">Phone Number</label>
+      <input
+        type="tel"
+        id="phone"
+        name="phone"
+        placeholder="+254 700 000 000"
+        pattern="^\+254\s?\d{3}\s?\d{3}\s?\d{3}$"
+        title="Phone number format: +254 XXX XXX XXX"
+        autocomplete="tel"
+      />
+    </fieldset>
+
+    <!-- Grouping account details -->
+    <fieldset>
+      <legend>Account Details</legend>
+
+      <label for="username">Username *</label>
+      <input
+        type="text"
+        id="username"
+        name="username"
+        placeholder="Choose a username"
+        required
+        minlength="5"
+        pattern="^[a-zA-Z0-9_-]{5,15}$"
+        title="5-15 characters: letters, numbers, underscore or dash"
+        autocomplete="username"
+      />
+
+      <label for="password">Password *</label>
+      <input
+        type="password"
+        id="password"
+        name="password"
+        placeholder="Enter a strong password"
+        required
+        minlength="8"
+        pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$"
+        title="Minimum 8 characters, at least one letter and one number"
+        autocomplete="new-password"
+      />
+
+      <label for="confirm_password">Confirm Password *</label>
+      <input
+        type="password"
+        id="confirm_password"
+        name="confirm_password"
+        placeholder="Re-enter your password"
+        required
+        minlength="8"
+        autocomplete="new-password"
+      />
+      <!-- Note: Confirm password validation needs JavaScript, so here only native validation for required and minlength -->
+    </fieldset>
+
+    <!-- Grouping preferences -->
+    <fieldset>
+      <legend>Preferences</legend>
+
+      <label for="gender">Gender</label>
+      <select id="gender" name="gender" autocomplete="sex">
+        <option value="" selected disabled>Select your gender</option>
+        <option value="female">Female</option>
+        <option value="male">Male</option>
+        <option value="other">Other</option>
+        <option value="prefer_not">Prefer not to say</option>
+      </select>
+
+      <label for="bio">Short Bio</label>
+      <textarea
+        id="bio"
+        name="bio"
+        rows="4"
+        placeholder="Tell us a little about yourself"
+        maxlength="300"
+      ></textarea>
+
+      <label>
+        <input type="checkbox" name="terms" required />
+        I agree to the <a href="#">terms and conditions</a> *
+      </label>
+    </fieldset>
+
+    <button type="submit">Register</button>
+  </form>
+</section>
+
+<footer>
+  <p>&copy; 2025 Enhanced HTML5 Content Assignment</p>
+</footer>
+
+</body>
+</html>
